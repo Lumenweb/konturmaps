@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Управление картами</title>
+<link rel="stylesheet" href="/static/style.css">
+<link rel="stylesheet" href="{{base}}/assets/admin.css">
+</head>
+<body data-base="{{base}}">
+<header class="topbar">
+  <div class="topbar-title"><div>Управление картами</div><div class="sub" id="teacherName"></div></div>
+  <button class="btn small" id="nameBtn" type="button">Моё имя</button>
+  <a class="btn small" href="/link" target="_blank">Ссылка для учеников</a>
+  <a class="btn small" href="/" target="_blank">Сайт</a>
+  <button class="btn small" id="pwdBtn" type="button">Пароль</button>
+  <button class="btn small" id="logoutBtn" type="button">Выйти</button>
+</header>
+<div class="admin">
+  <aside class="sidebar">
+    <ul id="subsNav"></ul>
+    <div class="side-head"><b>Разделы</b><button class="btn small" id="newRootFolder" type="button">+ Раздел</button></div>
+    <ul id="tree"></ul>
+    <p class="muted side-hint">Карты и разделы можно перетаскивать на другой раздел.</p>
+  </aside>
+  <main id="main"></main>
+</div>
+<script src="{{base}}/assets/admin.js"></script>
+</body>
+</html>

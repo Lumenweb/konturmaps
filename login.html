@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Вход</title>
+<link rel="stylesheet" href="/static/style.css">
+<style>
+  body { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 16px; }
+  form { width: 100%; max-width: 320px; display: flex; flex-direction: column; gap: 10px; }
+  .login-error { margin: 0; color: var(--danger); font-size: 14px; text-align: center; }
+</style>
+</head>
+<body>
+<form method="post">
+  <input class="input" type="text" name="login" autocomplete="username" autocapitalize="none" spellcheck="false" placeholder="Логин" aria-label="Логин" autofocus required>
+  <input class="input" type="password" name="password" autocomplete="current-password" placeholder="Пароль" aria-label="Пароль" required>
+  <button class="btn primary" type="submit">Войти</button>
+  {{error}}
+</form>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<title>Контурная карта</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="map-page">
+<header class="topbar">
+  <a href="/" id="backLink" class="icon-btn" aria-label="К списку карт">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
+  </a>
+  <div class="topbar-title">
+    <div id="mapTitle">Загрузка…</div>
+    <div id="studentName" class="sub"></div>
+  </div>
+  <button id="helpBtn" class="icon-btn" type="button" aria-label="Как работать с картой">?</button>
+  <button id="panelBtn" class="btn" type="button" aria-label="Задания"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01"/></svg><span>Задания</span></button>
+  <button id="submitBtn" class="btn primary" type="button">Сдать</button>
+</header>
+<button id="resultBar" type="button" hidden></button>
+
+<main class="map-main">
+  <div id="viewport">
+    <div id="world">
+      <img id="mapImg" alt="Контурная карта" draggable="false">
+      <svg id="svg" xmlns="http://www.w3.org/2000/svg"><g id="marks"></g><g id="live"></g></svg>
+    </div>
+    <div class="zoom-ctl">
+      <button id="zoomIn" type="button" aria-label="Приблизить">+</button>
+      <button id="zoomOut" type="button" aria-label="Отдалить">−</button>
+      <button id="zoomFit" type="button" aria-label="Показать всю карту">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+      </button>
+    </div>
+    <div id="notice" hidden></div>
+    <div id="toolHint"></div>
+  </div>
+
+  <aside id="panel">
+    <div class="panel-head">
+      <div class="tabs">
+        <button class="tab active" data-tab="tasks" type="button">Задания</button>
+        <button class="tab" data-tab="legend" type="button">Условные знаки</button>
+      </div>
+      <button class="icon-btn panel-close" id="panelClose" type="button" aria-label="Свернуть">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+    </div>
+    <div class="panel-body" id="tabTasks"></div>
+    <div class="panel-body" id="tabLegend" hidden></div>
+  </aside>
+</main>
+
+<div id="taskBar" hidden>
+  <button id="taskChip" type="button"></button>
+</div>
+<nav id="toolbar">
+  <div class="tools" id="tools"></div>
+  <div class="opts" id="opts"></div>
+  <div class="tool-side" id="toolSide"></div>
+</nav>
+
+<script src="/static/map.js"></script>
+</body>
+</html>
